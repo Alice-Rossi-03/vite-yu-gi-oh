@@ -10,10 +10,10 @@ export default{
             <div class="select">
                 <select name="species" id="species-select">
                     <option value="">-- Choose An Option --</option>
-                    <option value="dog">Alien</option>
-                    <option value="cat">Human</option>
-                    <option value="hamster">Dragon</option>
-                    <option value="parrot">Coder</option>
+                    <option value="alien">Alien</option>
+                    <option value="human">Human</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="coder">Coder</option>
                 </select>
             </div>
         </div>
@@ -34,6 +34,11 @@ export default{
                 min-width: 15em;
                 border: 0;
                 border-radius: 0.5em;
+                padding-inline: 0.7em;
+
+                &:hover{
+                    opacity: 80%;
+                }
             }
         }
     }

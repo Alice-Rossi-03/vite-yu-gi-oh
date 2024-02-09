@@ -15,7 +15,10 @@ export default {
 <template>
     <main>
         <AppSelect/>
+
+        
         <AppCardsList/>
+        
     </main>
 </template>
 
