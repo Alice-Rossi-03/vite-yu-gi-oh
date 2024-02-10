@@ -19,14 +19,11 @@
 <template>
   
     <AppHeader/>
-  
-  
     <AppMain/>
   
 </template>
 
 <style lang="scss">
   @use './styles/general.scss'; 
-
 
 </style> 

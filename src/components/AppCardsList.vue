@@ -19,14 +19,13 @@ export default{
               .get(store.apiUrl)
               .then( result => {
                   console.log(result.data)
-                  store.cardList = result.data.response
+                  store.cardList = result.data.data
               }
             )
         }
     },
     mounted(){
         this.getCardList()
-        // console.log(result.data)
     }
 }
 </script>
@@ -38,15 +37,11 @@ export default{
         <div class="found-cards">Found 20 Cards</div>
 
         <div class="container-flex">
-            <!-- <AppCard/> -->
-
-            <!-- <AppCard v-for="(element, index) in store.cardList" :key="index" :propsImg="element.ygoprodeck_url" :propsName="element.name" :propsSpecies="element.archetype"/> -->
 
             <AppCard v-for="(element, index) in store.cardList" :key="index" :propsProperty="element"/>
 
         </div>
 
-        <!-- <AppCard v-for="(element, index) in cardList" :key="index" :propsImg="data.ygoprodeck_url" :propsName="data.name" :propsSpecies="data.archetype"/> -->
     </div>
 </template>
 
