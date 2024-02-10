@@ -27,7 +27,7 @@ export default{
 
         .select{
             padding-block: 1em;
-            margin-bottom: 3em;
+            margin-bottom: 1em;
             
             select{
                 min-height: 2.5em;

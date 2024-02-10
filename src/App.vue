@@ -1,7 +1,6 @@
 <script>
   import AppHeader from './components/AppHeader.vue'
   import AppMain from './components/AppMain.vue'
-  import axios from 'axios';
   import { store } from './store.js';
 
   export default{
@@ -13,19 +12,6 @@
       return{
         store
       }
-    },
-    methods(){
-        getCardList();{
-            axios
-              .get(store.apiUrl)
-              .then( result => {
-                  console.log(result.data)
-                  store.cardList = result.data.response
-              })
-        }
-    },
-    mounted(){
-        this.cardList 
     }
   }
 </script>
