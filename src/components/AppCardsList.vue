@@ -2,7 +2,6 @@
 import AppCard from './AppCard.vue';
 import AppFoundCards from './AppFoundCards.vue';
 import { store } from '../store.js';
-import axios from 'axios';
 
 export default{
     name: 'AppCardsList',
@@ -14,20 +13,6 @@ export default{
         return{
             store
         }
-    },
-    methods: {
-        getCardList(){
-            axios
-              .get(store.apiUrl)
-              .then( result => {
-                  console.log(result.data)
-                  store.cardList = result.data.data
-              }
-            )
-        }
-    },
-    mounted(){
-        this.getCardList()
     }
 }
 </script>
@@ -38,8 +23,6 @@ export default{
     <div class="container">
 
         <AppFoundCards/>
-
-        <!-- <div class="found-cards">Found {{store.cardList.length}} Cards</div> -->
 
         <div class="container-flex">
 

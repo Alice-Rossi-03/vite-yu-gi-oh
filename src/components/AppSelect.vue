@@ -30,8 +30,9 @@ export default{
 <template>
     <div class="container">
             <div class="select">
-                <select name="species" id="species-select">
-                    <option v-for="(element, index) in store.archetypeList" :key="index">{{element.archetype_name}}</option>
+                <select name="species" id="species-select" v-model="store.archetypeValue" @change="$emit('filterArchetype')">
+                    <option v-for="(element, index) in store.archetypeList" :key="index" :value="element.archetype_name">{{element.archetype_name}}</option>
+                    
                 </select>
             </div>
         </div>
