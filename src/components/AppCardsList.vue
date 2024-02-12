@@ -1,12 +1,14 @@
 <script>
 import AppCard from './AppCard.vue';
+import AppFoundCards from './AppFoundCards.vue';
 import { store } from '../store.js';
 import axios from 'axios';
 
 export default{
     name: 'AppCardsList',
     components:{
-        AppCard
+        AppFoundCards,
+        AppCard,
     },
     data(){
         return{
@@ -32,9 +34,12 @@ export default{
 
 <template>
 
+
     <div class="container">
 
-        <div class="found-cards">Found 20 Cards</div>
+        <AppFoundCards/>
+
+        <!-- <div class="found-cards">Found {{store.cardList.length}} Cards</div> -->
 
         <div class="container-flex">
 
@@ -63,16 +68,16 @@ export default{
             margin-top: 1em;
         }
 
-        .found-cards{
-            background-color: $black;
-            color: $white;
-            width: 10em;
-            text-align: center;
-            padding: 0.5em;
-            border-radius: 0.5em;
-            margin-bottom: 1em; 
+        // .found-cards{
+        //     background-color: $black;
+        //     color: $white;
+        //     width: 10em;
+        //     text-align: center;
+        //     padding: 0.5em;
+        //     border-radius: 0.5em;
+        //     margin-bottom: 1em; 
 
-        }
+        // }
     }
 
 </style>

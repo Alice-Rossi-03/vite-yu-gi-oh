@@ -4,7 +4,9 @@ export const store = reactive ({
     saerchText: '',
     loading: true,
     cardList: [],
-    apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0"
+    archetypeList:[],
+    apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0',
+    apiArchetypeUrl: 'https://db.ygoprodeck.com/api/v7/archetypes.php'
 })
 
 

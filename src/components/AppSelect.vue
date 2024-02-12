@@ -1,7 +1,29 @@
 <script>
+import { store } from '../store.js';
+import axios from 'axios';
 
 export default{
-    name: 'AppSelect'
+    name: 'AppSelect',
+    data(){
+        return{
+            store
+        }
+    },
+    methods: {
+        getArchetype(){
+            axios
+              .get(store.apiArchetypeUrl)
+              .then( result => {
+                  console.log(result.data)
+                  store.archetypeList = result.data
+              }
+            )
+        }
+    },
+    mounted(){
+        this.getArchetype()
+    }
+    
 }
 </script>
 
@@ -9,11 +31,7 @@ export default{
     <div class="container">
             <div class="select">
                 <select name="species" id="species-select">
-                    <option value="">-- Choose An Option --</option>
-                    <option value="alien">Alien</option>
-                    <option value="human">Human</option>
-                    <option value="dragon">Dragon</option>
-                    <option value="coder">Coder</option>
+                    <option v-for="(element, index) in store.archetypeList" :key="index">{{element.archetype_name}}</option>
                 </select>
             </div>
         </div>
@@ -28,9 +46,12 @@ export default{
         .select{
             padding-block: 1em;
             margin-bottom: 1em;
-            
+            max-height: 10em;
+            overflow: hidden;
+
+
             select{
-                min-height: 2.5em;
+                height: 2.5em;
                 min-width: 15em;
                 border: 0;
                 border-radius: 0.5em;

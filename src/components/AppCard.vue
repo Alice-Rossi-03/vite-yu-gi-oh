@@ -18,7 +18,7 @@ export default{
 
     <div class="card">
         <figure>
-            <img :src="propsProperty.card_images[0].image_url" :alt="propsName">
+            <img :src="propsProperty.card_images[0].image_url" :alt="propsProperty.name">
         </figure>
         <div>
             <h3>{{propsProperty.name}}</h3>
