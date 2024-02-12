@@ -19,10 +19,10 @@ export default {
     methods: {
         getCardList(){
 
-            store.apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0'
+            // store.apiUrl = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0'
 
-            if(store.archetypeValue != ''){
-                store.apiUrl += '?archetype=${store.archetypeValue}'
+            if(store.archetypeValue !== ''){
+                store.apiUrl += `&archetype=${store.archetypeValue}`
             }
 
             axios
@@ -43,10 +43,7 @@ export default {
 <template>
     <main>
         <AppSelect @filterArchetype="getCardList"/>
-
-        
         <AppCardsList/>
-        
     </main>
 </template>
 
